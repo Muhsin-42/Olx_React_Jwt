@@ -16,10 +16,10 @@ module.exports = {
                     // return res.json({ status: 'ok', user: true })
                     return res.status(200).json({ message: "Login Sucess", adminToken, admin: admin.username });
                 } else {
-                    return res.status(403).json({ message: "Wrong password" });
+                    return res.status(403).json({ message: "Password Incorrect" });
                 }
             } else {
-                return res.status(500).json({ message: "Wrong Email " });
+                return res.status(500).json({ message: "Email Incorrect" });
             }
         } catch (error) {
             console.log(error);

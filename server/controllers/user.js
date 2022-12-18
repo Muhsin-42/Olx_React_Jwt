@@ -7,12 +7,12 @@ const directoryPath = 'public/'
 module.exports = {
     userSignUp: async (req, res) => {
         try {
-            if(req.body.password && req.body.username){
+            if(req.body.password && req.body.username && req.body.email){
                 req.body.password = await bcrypt.hash(req.body.password, 10);
                 const user = await User.create(req.body)
                 res.json({ status: 'ok' })
             }else{
-            res.json({ status: 'error', error: "Invalid Data" })
+            res.json({ status: 'error', error: "All Fields Are Required" })
             }
         } catch (error) {
             res.json({ status: 'error', error: "Email Already Exists!" })
