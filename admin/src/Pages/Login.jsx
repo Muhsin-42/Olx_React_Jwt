@@ -1,11 +1,8 @@
-// import React from 'react'
+import React from 'react'
+import Login from "../Components/Login/Login";
 
-import Footer from "../Components/Footer/Footer"
-import Login from "../Components/Login/Login"
-
-
-import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -20,7 +17,7 @@ function LoginPage() {
     <div>
       <Login />
     </div>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;

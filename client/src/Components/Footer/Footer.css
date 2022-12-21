@@ -1,6 +1,7 @@
 .footerParentDiv {
   width: 100%;
 }
+
 .footerParentDiv .content {
   display: flex;
   justify-content: space-between;
@@ -8,6 +9,7 @@
   background: #ebeeef;
   padding: 16px;
 }
+
 .footerParentDiv .content .heading {
   font-size: 24px;
   font-weight: bolder;
@@ -25,6 +27,7 @@
 .footerParentDiv .footer p {
   margin: 0;
 }
-.list{
-  padding: 10px;
+
+.list {
+  padding: 10px;
 }

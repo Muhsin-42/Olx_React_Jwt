@@ -11,6 +11,7 @@
   align-items: center;
   width: 100%;
 }
+
 .heading :first-child {
   font-size: 24px;
   color: #002f34;
@@ -60,17 +61,21 @@
   min-height: 100%;
   text-align: center;
 }
+
 .posts .content .rate {
   margin-top: 10px;
   font-size: larger;
   font-weight: bold;
 }
+
 .posts .content .kilometer {
   font-size: medium;
 }
+
 .posts .content .name {
   font-size: small;
 }
+
 .posts .date {
   display: flex;
   justify-content: flex-end;

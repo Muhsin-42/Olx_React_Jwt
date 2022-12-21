@@ -1,19 +1,19 @@
-const express =require('express')
-const app=express()
-const cors=require('cors')
-require('./utils/database')
+const express = require("express");
+const app = express();
+const cors = require("cors");
+require("./utils/database");
 
-app.use(express.static( 'public'));
+app.use(express.static("public"));
 
-const userRoutes=require('./routes/user')
-const adminRoutes=require('./routes/admin')
+const userRoutes = require("./routes/user");
+const adminRoutes = require("./routes/admin");
 
 app.use(cors());
 app.use(express.json());
 
-//routes
+// routes
 
-app.use('/api',userRoutes);
-app.use('/api/admin',adminRoutes);
+app.use("/api", userRoutes);
+app.use("/api/admin", adminRoutes);
 
-app.listen(9000)
+app.listen(9000);

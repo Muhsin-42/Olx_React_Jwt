@@ -1,8 +1,8 @@
-import React from 'react'
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 function Footer() {
-    return (
-        <div className="footerParentDiv">
+  return (
+    <div className="footerParentDiv">
       <div className="content">
         <div>
           <div className="heading">
@@ -48,8 +48,7 @@ function Footer() {
         <p>Free Classifieds in India. © 2006-2021 OLX</p>
       </div>
     </div>
-
-    )
+  );
 }
 
-export default Footer
+export default Footer;

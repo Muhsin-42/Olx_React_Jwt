@@ -1,23 +1,23 @@
 .bannerParentDiv {
   padding-top: 4em;
 }
-.bannerParentDiv .bannerChildDiv {
-}
+
+.bannerParentDiv .bannerChildDiv {}
+
 .bannerParentDiv .bannerChildDiv .menuBar {
   display: flex;
   padding: 10px 16px 10px 16px;
 }
 
-.bannerParentDiv .bannerChildDiv .menuBar span {
-}
+.bannerParentDiv .bannerChildDiv .menuBar span {}
 
 .bannerParentDiv .bannerChildDiv .menuBar .categoryMenu span {
   margin-right: 16px;
   font-weight: bolder;
 }
 
-.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
-}
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {}
+
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
   padding: 10px;
 }
@@ -26,7 +26,8 @@
   position: relative;
   width: 100%;
 }
-.bannerChildDiv .banner img{
+
+.bannerChildDiv .banner img {
   width: 100%;
 }
 
@@ -34,6 +35,7 @@
   .otherQuickOptions {
     display: none;
   }
+
   .bannerChildDiv .banner {
     position: relative;
   }

@@ -1,23 +1,20 @@
-import React from 'react'
-import './HomeBanner.css';
-import { useSelector,useDispatch } from 'react-redux';
-import { change } from '../../Redux/usernameReducer';
+import React from "react";
+import "./HomeBanner.css";
+import { useSelector, useDispatch } from "react-redux";
+import { change } from "../../Redux/usernameReducer";
 import Arrow from "../../assets/Arrow";
 
 function HomeBanner() {
-    const username =useSelector((state)=> state.username)
-    const dispatch =useDispatch()
+  const username = useSelector((state) => state.username);
+  const dispatch = useDispatch();
 
-
-
-
-    return (
-        <div className="bannerParentDiv">
+  return (
+    <div className="bannerParentDiv">
       <div className="bannerChildDiv">
         <div className="menuBar">
           <div className="categoryMenu">
             <span>ALL CATEGORIES</span>
-            <Arrow></Arrow> 
+            <Arrow></Arrow>
           </div>
           <div className="otherQuickOptions">
             <span>Cars</span>
@@ -30,15 +27,11 @@ function HomeBanner() {
           </div>
         </div>
         <div className="banner">
-          <img
-            src="../../../Images/banner copy.png"
-            alt=""
-          />
+          <img src="../../../Images/banner copy.png" alt="" />
         </div>
       </div>
-      
     </div>
-    )
+  );
 }
 
-export default HomeBanner
+export default HomeBanner;

@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Heart from '../../assets/Heart';
-import './Posts.css';
+import Heart from "../../assets/Heart";
+import "./Posts.css";
 
 function Posts() {
-
   return (
     <div className="postParentDiv">
       <div className="moreView">
@@ -13,9 +12,7 @@ function Posts() {
           <span>View more</span>
         </div>
         <div className="cards">
-          <div
-            className="card posts"
-          >
+          <div className="card posts">
             <div className="favorite">
               <Heart></Heart>
             </div>
