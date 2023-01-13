@@ -40,7 +40,7 @@ function Login() {
         let { email } = jwt_decode(token);
         console.log(email);
         dispatch(changeAdmin(email));
-        navigate("/dash");
+        navigate("/users");
       })
       .catch((err) => {
         Swal.fire({

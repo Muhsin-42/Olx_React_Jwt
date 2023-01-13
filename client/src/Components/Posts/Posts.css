@@ -24,11 +24,14 @@
 
 .recommendations .cards {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .moreView .cards {
   white-space: nowrap;
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 

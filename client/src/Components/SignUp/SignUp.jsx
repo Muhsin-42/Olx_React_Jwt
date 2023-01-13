@@ -27,20 +27,28 @@ function SignUp() {
         if (response.data.status === "ok") {
           navigate("/login");
         } else {
+          // Swal.fire({
+          //   position: "center",
+          //   icon: "warning",
+          //   title: response.data.error+'sss',
+          // });
+          
           Swal.fire({
-            position: "center",
-            icon: "warning",
-            title: response.data.error,
-            showConfirmButton: false,
+            position: 'bottom-end',
+            // icon: 'error',
+            // title: 'Oops...',
+            title: '❌   '+response.data.error,
             timer: 1500,
-          });
+              showConfirmButton: false,
+            
+          })
         }
       })
       .catch((err) => {
         Swal.fire({
           position: "center",
           icon: "warning",
-          title: err.data.error,
+          title: err.data.error+'eee',
           showConfirmButton: false,
           timer: 1500,
         });
@@ -50,12 +58,16 @@ function SignUp() {
   return (
     <div>
       {/* Section: Design Block */}
-      <section className="background-radial-gradient overflow-hidden">
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "\n    .background-radial-gradient {\n      background-color: hsl(218, 41%, 15%);\n      background-image: radial-gradient(650px circle at 0% 0%,\n          hsl(218, 41%, 35%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%),\n        radial-gradient(1250px circle at 100% 100%,\n          hsl(218, 41%, 45%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%);\n    }\n\n    #radius-shape-1 {\n      height: 220px;\n      width: 220px;\n      top: -60px;\n      left: -130px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    #radius-shape-2 {\n      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;\n      bottom: -60px;\n      right: -110px;\n      width: 300px;\n      height: 300px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    .bg-glass {\n      background-color: hsla(0, 0%, 100%, 0.9) !important;\n      backdrop-filter: saturate(200%) blur(25px);\n    }\n  ",
-          }}
+      <section className="background-radial-gradient overflow-hidden" style={{
+        // backgroundImage :'url(https://static.vecteezy.com/system/resources/previews/007/343/586/non_2x/blue-gradient-background-with-curved-elements-used-for-banner-poster-and-website-design-free-vector.jpg)'
+        backgroundImage :'url(https://uploads-ssl.webflow.com/5a9ee6416e90d20001b20038/5afec1d5269cda26f59b1f2d_planet-1_1x.jpg)'
+      }}>
+        <style 
+        
+          // dangerouslySetInnerHTML={{
+          //   __html:
+          //     // "\n    .background-radial-gradient {\n      background-color: hsl(218, 41%, 15%);\n      background-image: radial-gradient(650px circle at 0% 0%,\n          hsl(218, 41%, 35%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%),\n        radial-gradient(1250px circle at 100% 100%,\n          hsl(218, 41%, 45%) 15%,\n          hsl(218, 41%, 30%) 35%,\n          hsl(218, 41%, 20%) 75%,\n          hsl(218, 41%, 19%) 80%,\n          transparent 100%);\n    }\n\n    #radius-shape-1 {\n      height: 220px;\n      width: 220px;\n      top: -60px;\n      left: -130px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    #radius-shape-2 {\n      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;\n      bottom: -60px;\n      right: -110px;\n      width: 300px;\n      height: 300px;\n      background: radial-gradient(#44006b, #ad1fff);\n      overflow: hidden;\n    }\n\n    .bg-glass {\n      background-color: hsla(0, 0%, 100%, 0.9) !important;\n      backdrop-filter: saturate(200%) blur(25px);\n    }\n  ",
+          // }}
         />
         <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
           <div className="row gx-lg-5 align-items-center mb-5">
@@ -79,10 +91,10 @@ function SignUp() {
                 ab ipsum nisi dolorem modi. Quos?
               </p>
             </div>
-            <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
+            <div className=" col-lg-6 mb-5 mb-lg-0 position-relative">
               <div
                 id="radius-shape-1"
-                className="position-absolute rounded-circle shadow-5-strong"
+                className="shadow-lg position-absolute rounded-circle shadow-5-strong"
               />
               <div
                 id="radius-shape-2"
@@ -97,6 +109,9 @@ function SignUp() {
                     <div className="row">
                       <div className=" mb-4">
                         <div className="form-outline">
+                          <label className="form-label" htmlFor="form3Example1">
+                            User name
+                          </label>
                           <input
                             type="text"
                             id="form3Example1"
@@ -106,14 +121,14 @@ function SignUp() {
                               setUsername(e.target.value);
                             }}
                           />
-                          <label className="form-label" htmlFor="form3Example1">
-                            User name
-                          </label>
                         </div>
                       </div>
                     </div>
                     {/* Email input */}
                     <div className="form-outline mb-4">
+                      <label className="form-label" htmlFor="form3Example3">
+                        Email address
+                      </label>
                       <input
                         type="email"
                         id="form3Example3"
@@ -123,12 +138,12 @@ function SignUp() {
                           setEmail(e.target.value);
                         }}
                       />
-                      <label className="form-label" htmlFor="form3Example3">
-                        Email address
-                      </label>
                     </div>
                     {/* Password input */}
                     <div className="form-outline mb-4">
+                      <label className="form-label" htmlFor="form3Example4">
+                        Password
+                      </label>
                       <input
                         type="password"
                         id="form3Example4"
@@ -138,12 +153,9 @@ function SignUp() {
                           setPassword(e.target.value);
                         }}
                       />
-                      <label className="form-label" htmlFor="form3Example4">
-                        Password
-                      </label>
                     </div>
                     {/* Checkbox */}
-                    <div className="form-check d-flex justify-content-center mb-4">
+                    {/* <div className="form-check d-flex justify-content-center mb-4">
                       <input
                         className="form-check-input me-2"
                         type="checkbox"
@@ -157,7 +169,7 @@ function SignUp() {
                       >
                         Subscribe to our newsletter
                       </label>
-                    </div>
+                    </div> */}
                     {/* Submit button */}
                     <button
                       type="submit"
@@ -169,7 +181,7 @@ function SignUp() {
                     <div className="text-center">
                       <p>
                         Already have an account?{" "}
-                        <h6
+                        <h6 className="d-inline"
                           style={{ cursor: "pointer" }}
                           onClick={() => navigate("/login")}
                         >

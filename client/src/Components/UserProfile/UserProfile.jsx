@@ -45,6 +45,7 @@ function UserProfile() {
       inputAttributes: {
         accept: "image/*",
         "aria-label": "Upload your profile picture",
+        "required": true
       },
     });
 
@@ -86,17 +87,40 @@ function UserProfile() {
     }
   };
   const remove = () => {
-    const Token = localStorage.getItem("token");
-    let Stoken = JSON.stringify({ Token });
-    axios
-      .delete(`${removeimage}/${Stoken}`)
-      .then((res) => {
-        setImage(res.data.image);
-        dispatch(changeImage(res.data.image));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to delete the profile picture?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const Token = localStorage.getItem("token");
+        let Stoken = JSON.stringify({ Token });
+        axios
+          .delete(`${removeimage}/${Stoken}`)
+          .then((res) => {
+            setImage(res.data.image);
+            dispatch(changeImage(res.data.image));
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+
+
+
+
   };
   return (
     <div>

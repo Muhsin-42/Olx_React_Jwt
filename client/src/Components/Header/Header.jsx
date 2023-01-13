@@ -10,6 +10,7 @@ import OlxLogo from "../../assets/OlxLogo";
 import Search from "../../assets/Search";
 import Arrow from "../../assets/Arrow";
 import jwt_decode from "jwt-decode";
+import Swal from "sweetalert2";
 
 function Header() {
   const navigate = useNavigate();
@@ -43,8 +44,22 @@ function Header() {
   console.log(username1, "666666666666666");
 
   const logout = () => {
-    localStorage.clear();
-    dispatch({ type: "logout" });
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to logout?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        dispatch({ type: "logout" });
+        navigate("/");
+      }
+    })
+
   };
 
   const username = useSelector((state) => state.username);
@@ -81,9 +96,9 @@ function Header() {
               <span>
                 {username}{" "}
                 <button onClick={logout}>
-                  <Link className="Link" to="/login">
+                  {/* <Link className="Link" to="/login"> */}
                     Logout
-                  </Link>
+                  {/* </Link> */}
                 </button>
               </span>
             ) : (

@@ -1,6 +1,9 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function OlxLogo() {
+  const navigate = useNavigate();
   return (
     <svg
       width="48px"
@@ -9,6 +12,10 @@ export default function OlxLogo() {
       data-aut-id="icon"
       className
       fillRule="evenodd"
+
+      onClick={() => {
+        navigate("/");
+      }}
     >
       <path
         className="rui-77aaa"

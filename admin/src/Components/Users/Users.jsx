@@ -34,7 +34,7 @@ function Users() {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, delete user",
     }).then((result) => {
       if (result.isConfirmed) {
         axios
@@ -42,7 +42,7 @@ function Users() {
           .then((res) => {
             getUsersList();
             console.log(res);
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire("Deleted!", "The user has been deleted.", "success");
           })
           .catch((err) => {
             Swal.fire(

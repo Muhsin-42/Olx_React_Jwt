@@ -51,31 +51,38 @@ function Login() {
   return (
     <div>
       {/* Section: Design Block */}
-      <section className="text-center">
+      <section className="text-center ">
         {/* Background image */}
         <div
-          className="p-5 bg-image"
-          // style={{
-          //   backgroundImage:
-          //     'url("https://apkdone.com/wp-content/uploads/2020/12/OLX-poster.jpg")',
-          //   height: 500, width:'100%',
-
-          // }}
+          className="p-5 bg-image "
+          style={{
+            backgroundImage:
+              // 'url("https://apkdone.com/wp-content/uploads/2020/12/OLX-poster.jpg")',
+              'url("https://d2liqplnt17rh6.cloudfront.net/coverImages/olxcover_7eb25863-0853-4db0-a735-130377b58e56-111.jpeg")',
+            height: 400, 
+            width:'100%',
+            backgroundColor: 'red',
+            backgroundSize: '1400px',
+            backgroundRepeat: "no-repeat",
+            backgroundPosition :  '50% , 50%'
+          }}
         />
         {/* Background image */}
-        <div className="outer">
+        <div className="outer my-5 ">
           <div
-            className="card mx-5 mx-md-5 shadow-5-strong w-50 outer "
+            className="card shadow-lg mx-5 mx-md-5 shadow-5-strong w-50 outer bg-dardk"
             style={{
-              marginTop: "-100px",
+              marginTop: "-200px",
               background: "hsla(0, 0%, 100%, 0.8)",
-              backdropFilter: "blur(30px)",
+              backdropFilter: "blur(10px)",
+              // backgroundColor: 'red',
+              borderRadius : '5%'
             }}
           >
-            <div className="card-body py-5 px-md-5 ">
+            <div className="card-body py-3 px-md-5d ">
               <div className="row d-flex justify-content-center">
-                <div className="col-lg-8">
-                  <h2 className="fw-bold mb-5">Login Form</h2>
+                <div className="col-lg-9">
+                  <h2 className="fw-bold mb-5">Sign In</h2>
                   <form onSubmit={handleLogin}>
                     <div className="form-outline mb-4">
                       <label className="form-label" htmlFor="form3Example3">

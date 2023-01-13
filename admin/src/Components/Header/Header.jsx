@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "../../utils/axios";
 import { verifyToken } from "../../utils/Constants";
 import { changeAdmin } from "../../Redux/adminReducer";
+import Swal from 'sweetalert2'
 
 function Header() {
   const dispatch = useDispatch();
@@ -32,7 +33,23 @@ function Header() {
   const logoutHandle = () => {
     // navigate("/");
     // localStorage.clear();
-    localStorage.removeItem("adminToken");
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to logout?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/");
+    // localStorage.clear();
+
+        localStorage.removeItem("adminToken");
+
+      }
+    })
   };
 
   const admin = useSelector((state) => state.username);
@@ -51,7 +68,7 @@ function Header() {
           <i className="bi bi-list toggle-sidebar-btn" />
         </div>
         {/* End Logo */}
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <form
             className="search-form d-flex align-items-center"
             method="POST"
@@ -67,8 +84,8 @@ function Header() {
               <i className="bi bi-search" />
             </button>
           </form>
-        </div>
-        <h3>{admin}</h3>
+        </div> */}
+        {/* <h3>{admin}</h3> */}
         {/* End Search Bar */}
         <nav className="header-nav ms-auto">
           <ul className="d-flex align-items-center">
@@ -89,15 +106,15 @@ function Header() {
               </a>
               {/* End Profile Iamge Icon */}
               <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                <li>
-                  <Link
+                <li  onClick={logoutHandle}>
+                  {/* <Link
                     className="dropdown-item d-flex align-items-center"
-                    onClick={logoutHandle}
+                   
                     to={"/"}
-                  >
+                  > */}
                     <i className="bi bi-box-arrow-right" />
                     <span>Sign Out</span>
-                  </Link>
+                  {/* </Link> */}
                 </li>
               </ul>
               {/* End Profile Dropdown Items */}

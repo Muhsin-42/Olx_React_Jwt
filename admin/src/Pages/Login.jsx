@@ -9,7 +9,7 @@ function LoginPage() {
   useEffect(() => {
     const Token = localStorage.getItem("adminToken");
     if (Token) {
-      navigate("/dash");
+      navigate("/users");
     }
   }, [navigate]);
 
